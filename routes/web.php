@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+// Call the controller
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,12 +19,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// The redirects route, with the roles function
+Route::get('/redirects', [UserController::class, "roles"]);
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    
+    // To prevent login from the url using /dashboard
+    Route::get('/dashboard', [UserController::class, "roles"])->name('dashboard');
+    //To prevent login from the url using /redirects
+    Route::get('/redirects', [UserController::class, "roles"])->name('dashboard');
 });
