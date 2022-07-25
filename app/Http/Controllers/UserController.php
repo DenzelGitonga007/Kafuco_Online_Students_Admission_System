@@ -17,7 +17,8 @@ class UserController extends Controller
 
     if ($role == '1') {
         // For the ICT_Support(s_admin)
-        return view('crud.ict_crud.student_list');
+        // return view('crud.ict_crud.student_details');
+        return view('crud.ict_crud.student_details');
     }
 
     elseif ($role == '2') {
@@ -28,7 +29,7 @@ class UserController extends Controller
     else{
         // For the student->0
         // return view('resources\views\crud\student_crud\personal_details\bio_data.blade.php'); 
-        return view('crud.student_crud.personal_details.bio_data');
+        return view('crud.student_crud.personal_details');
     }
     }
 }
