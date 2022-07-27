@@ -18,7 +18,7 @@ use App\Http\Controllers\IctCrudController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
 // The redirects route, with the roles function
@@ -39,8 +39,12 @@ Route::middleware([
 
 // The crud routes
 // Student Crud
+
 // Personal Details
-Route::post('/personal_details', [PersonalDetailController::class, "uploadDetails"]);
+Route::post('/student_upload_personal_details', [PersonalDetailController::class, "uploadDetails"]);
+
+// View the personal_details after posting
+Route::get('student_view_personal_details', [PersonalDetailController::class, "viewDetails"]);
 
 //Ict crud
 // Reading/viewing the personal details

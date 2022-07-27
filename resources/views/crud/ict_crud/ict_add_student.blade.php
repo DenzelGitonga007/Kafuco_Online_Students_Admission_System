@@ -17,7 +17,7 @@
             <div class="col-md-12">
                 <!-- The success message -->
                 @if(Session::has('success'))
-                    <div class="alert alert-success alert-dismissible fade" role="alert">
+                    <div class="alert alert-success" role="alert">
                         <!-- To print the message -->
                         <i class="bi-check-circle"></i>
                         {{ Session::get('success') }}

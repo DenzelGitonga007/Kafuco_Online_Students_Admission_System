@@ -49,7 +49,7 @@ class IctCrudController extends Controller
     $personal_details->save();
 
     // Redirect
-    return redirect()->back()->with('success', 'Student details uploaded successfully');
+    return redirect()->back()->with('success', 'Student details uploaded successfully'); //Redirects to the index addStudent() {}
     }
 
     // Editing/updating a student

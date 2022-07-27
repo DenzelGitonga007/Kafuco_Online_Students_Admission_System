@@ -17,13 +17,13 @@
             <div class="col-md-12">
                 <!-- The success message -->
                 @if(Session::has('success'))
-                    <div class="alert alert-success alert-dismissible fade" role="alert">
+                    <div class="alert alert-success" role="alert">
                         <!-- To print the message -->
-                        <i class="bi-check-circle"></i>
+                        
                         {{ Session::get('success') }}
 
                         <!-- Closing the alert -->
-                        <a href="" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <!-- <a href="" class="close" data-dismiss="alert" aria-label="close">&times;</a> -->
                     </div>
                 @endif
                 <h2>Personal Details</h2>

@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 use function Ramsey\Uuid\v1;
+// use App\Http\Controllers\IctCrudController;
+use App\Models\PersonalDetail;
 
 class UserController extends Controller
 {
@@ -14,11 +16,12 @@ class UserController extends Controller
        $role = Auth::user()->role; //This fetches the role value from the users' table and uses it to authenticate. 
        
     //    The condition(s) for authentication
-
+    
     if ($role == '1') {
         // For the ICT_Support(s_admin)
         // return view('crud.ict_crud.student_details');
-        return view('crud.ict_crud.student_details');
+        $personal_details = PersonalDetail::get();
+        return view('crud.ict_crud.student_details', compact('personal_details'));
     }
 
     elseif ($role == '2') {
@@ -28,7 +31,14 @@ class UserController extends Controller
 
     else{
         // For the student->0
-        // return view('resources\views\crud\student_crud\personal_details\bio_data.blade.php'); 
+        // return view('resources\views\crud\student_crud\personal_details\bio_data.blade.php');
+        // function viewStudent($id) {
+        //     // Get the records as from the index function
+        //     $personal_details = PersonalDetail::where('id', '=', $id)->first();
+        //     // return $personal_details;
+        //     return view('crud.student_crud.view_personal_details', compact('personal_details'));
+        // }
+        // $personal_details = PersonalDetail::where('id', '=', $id)->first();
         return view('crud.student_crud.personal_details');
     }
     }
