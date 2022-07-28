@@ -18,6 +18,12 @@ class IctCrudController extends Controller
 
     }
 
+    // Reading/viewing each student individually
+    public function viewStudent($id) {
+       $personal_details = PersonalDetail::where('id', '=', $id)->first();
+       return view('crud.ict_crud.ict_view_student', compact('personal_details'));
+    }
+
     // Returning the view with the "add student form"
     public function addStudent () {
        return view('crud.ict_crud.ict_add_student');
@@ -31,7 +37,8 @@ class IctCrudController extends Controller
         'surname' => 'required',
         // 'email' => 'required|email',
         'first_name' => 'required',
-        'last_name' => 'required'
+        'last_name' => 'required',
+        'date'=>'required',
 
     ]);
 
@@ -39,6 +46,7 @@ class IctCrudController extends Controller
     $surname = $request->surname;
     $first_name = $request->first_name;
     $last_name = $request->last_name;
+    $date = $request->date;
 
     $personal_details = new PersonalDetail();
 
@@ -46,6 +54,7 @@ class IctCrudController extends Controller
     $personal_details->surname = $surname;
     $personal_details->first_name = $first_name;
     $personal_details->last_name = $last_name;
+    $personal_details->date = $date;
     $personal_details->save();
 
     // Redirect
@@ -66,7 +75,9 @@ class IctCrudController extends Controller
         $request->validate([
             'surname' => 'required',
             'first_name' => 'required',
-            'last_name' => 'required'
+            'last_name' => 'required',
+            'date' => 'required',
+
         ]);
 
         // The data fields
@@ -74,11 +85,14 @@ class IctCrudController extends Controller
         $surname = $request->surname;
         $first_name = $request->first_name;
         $last_name = $request->last_name;
+        $date = $request->date;
+
 
         PersonalDetail::where('id', '=', $id)->update([
         'surname' => $surname,
         'first_name' => $first_name,
-        'last_name' => $last_name
+        'last_name' => $last_name,
+        'date' => $date,
         ]);
 
         // Redirect

@@ -50,6 +50,9 @@ Route::get('student_view_personal_details', [PersonalDetailController::class, "v
 // Reading/viewing the personal details
 Route::get('/student_details', [IctCrudController::class, "index"]);
 
+// Reading/viewing each student individually
+Route::get('/view_student/{id}', [IctCrudController::class, "viewStudent"]);
+
 // Return the add_students_form
 Route::get('/add_student', [IctCrudController::class, "addStudent"]);
 

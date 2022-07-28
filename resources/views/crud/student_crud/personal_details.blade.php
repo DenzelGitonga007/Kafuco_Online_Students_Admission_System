@@ -12,10 +12,18 @@
     </x-slot>
     <!-- The body -->
     <div class="container" style="margin-top: 50px;">
+    <!-- Success message -->
+    @if (Session::has('success'))
+        <div class="alert alert-success" role="alert">
+            {{ Session::get('success') }}
+        </div>
+    @endif
         <div class="row">
             <div class="col-md-12">
                 <h2>Personal Details</h2>
+                <!-- Name -->
                     <div class="card">
+                        <!-- Name -->
                         <div class="card-header">Your Name</div>
                             <div class="card-body">
                                 <form action="{{ url('student_upload_personal_details') }}" method="POST"> <!-- The route personal_details posts the details -->
@@ -57,7 +65,24 @@
                                             </div>
                                         @enderror
                                     </div>
-                                    <br>              
+                                    <br>
+                                    <!-- DOB -->
+                                    <div class="card-header">Your Birth Details</div> 
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <label for="dob" class="form-label">Date Of Birth</label> 
+                                                    <input type="date" class= "form-control" name="date" max="2007-01-01" value="{{ old('date') }}">
+                                                </div>
+                                                <!-- Validation -->
+                                                @error('date')
+                                                    <div class="alert alert-danger col">
+                                                        {{$message}}
+                                                    </div>
+                                                @enderror
+                                            </div>
+                                        </div>   
+                                    <br> 
                                     <!-- The buttons -->
                                     <div class="row">
                                         <button class="btn btn-outline-success btn-block">Submit Your Personal Details</button>
@@ -67,7 +92,12 @@
 
                                 
                             </div>
+                        
                     </div>
+
+                    <!-- <div class="card">
+
+                    </div> -->
             </div>
         </div>
     </div>

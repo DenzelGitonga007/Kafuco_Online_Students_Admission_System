@@ -28,12 +28,14 @@
                 @endif
                 <h2>Personal Details</h2>
                     <div class="card">
+                        <!-- Name -->
                         <div class="card-header">Your Name</div>
                             <div class="card-body">
                                 <form action="{{ url('ict_update_details') }}" method="POST"> <!-- The route personal_details posts the details -->
                                     <!-- The cross-site request forgery     -->
                                     @csrf
                                     {!! csrf_field() !!}
+                                    
                                     <div class="row">
                                         <!-- The hidden id field -->
                                         <input type="hidden" name="id" value="{{ $personal_details->id }}">
@@ -72,7 +74,25 @@
                                         </div>
                                         
                                     </div>
-                                    <br>              
+                                    <br> 
+                                    <!-- DOB -->
+                                    
+                                    <div class="card-header">DOB</div>
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <label for="dob" class="form-label">Date of Birth</label>
+                                                        <input type="date" class="form-control" name="date" max="2007-01-01" value="{{ $personal_details->date }}">
+                                                    </div>
+                                                    <!-- Validation -->
+                                                    @error('date')
+                                                        <div class="alert alert-danger col">
+                                                            {{$message}}
+                                                        </div>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                    <br>             
                                     <!-- The buttons -->
                                     <!-- Back -->
                                     <div class="row">
