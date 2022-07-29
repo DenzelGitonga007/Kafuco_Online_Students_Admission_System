@@ -18,6 +18,7 @@
             {{ Session::get('success') }}
         </div>
     @endif
+        <!-- Personal details -->
         <div class="row">
             <div class="col-md-12">
                 <h2>Personal Details</h2>
@@ -71,7 +72,7 @@
                                         <div class="card-body">
                                             <div class="row">
                                                 <div class="col">
-                                                    <label for="dob" class="form-label">Date Of Birth</label> 
+                                                    <label for="dob" class="form-label">Date of Birth</label> 
                                                     <input type="date" class= "form-control" name="date" max="2007-01-01" value="{{ old('date') }}">
                                                 </div>
                                                 <!-- Validation -->
@@ -82,22 +83,132 @@
                                                 @enderror
                                             </div>
                                         </div>   
-                                    <br> 
+                                    <br>
+                                    <!-- Gender  -->
+                                    <div class="card-header">Gender</div>
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="input-group col">
+                                                        <div class="input-group-prepend">
+                                                            <label for="gender" class="input-group-text form-label">Gender</label>
+                                                        </div>
+                                                        <select class="custom-select form-control" name="gender" style="height: 38px;">
+                                                            <option selected>Choose...</option>
+                                                            <option value="Male">Male</option>
+                                                            <option value="Female">Female</option>
+                                                            <option value="Rather_Not_Say">Rather Not Say</option>
+                                                        </select>
+                                                    </div>
+                                                    <!-- Validation -->
+                                                    @error('gender')
+                                                        <div class="alert alert-danger col">
+                                                            {{ $message }}
+                                                        </div>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <br>
+                                    <!-- Nationality details -->
+                                    
+                                    <div class="card-header">Nationality details</div>
+                                    <!-- National_ID -->
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <label for="national_id" class="form-label">National ID</label>
+                                                    <input type="text" class="form-control" name="national_id" pattern="[0-9]{8}" placeholder="National ID Number" value="{{ old('national_id') }}">
+                                                </div>
+                                                <!-- Validation -->
+                                                @error('national_id')
+                                                    <div class="alert alert-danger" role="alert">
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
+                                            </div>
+
+                                        </div>
+                                    <!-- Nationality -->
+                                    <div class="card-body">Nationality</div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <!-- Kenyan -->
+                                                <div class="form-check form-check-inline">
+                                                    <input type="radio" class="form-check-input" name="nationality" value="Kenyan">
+                                                    <label for="kenyan" class="form-check-label">Kenyan</label>
+                                                </div>
+                                                <!-- East African -->
+                                                <div class="form-check form-check-inline">
+                                                    <input type="radio" class="form-check-input" name="nationality" value="East African">
+                                                    <label for="east_african" class="form-check-label">East African</label>
+                                                </div>
+                                                <!-- Others -->
+                                            </div>
+                                        </div>
+                                    <br>    
+                                    <div class="card-header">Religion</div>
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <!-- Protestant -->
+                                                    <div class="form-check form-check-inline">
+                                                        <input type="radio" class="form-check-input" name="religion" value="Protestant">
+                                                        <label for="protestant" class="form-check-label">Protestant</label>
+                                                    </div>
+                                                    <!-- Catholic -->
+                                                    <div class="form-check form-check-inline">
+                                                        <input type="radio" class="form-check-input" name="religion" value="Catholic">
+                                                        <label for="catholic" class="form-check-label">Catholic</label>
+                                                    </div>
+                                                    <!-- Others -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <br>
+                                </form>
+                            </div>
+                        </div>
+
+        <br>
+        <!-- Home and address details -->
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Home and Address Details</h2>
+                    <div class="card">
+                        <div class="card-header">Your Home</div>
+                            <div class="card-body">
+                                <form action="{{ url('ict_save_details') }}" method="POST"> <!-- The route personal_details posts the details -->
+                                   <!-- The cross-site request forgery                              -->
+                                   @csrf
+                                   {!! csrf_field() !!} 
+                                   <div class="row">
+                                        <!-- county -->
+                                        <div class="col">
+                                            <label for="county" class="form-label">County</label>
+                                            <input type="text" class="form-control" placeholder="County" name="county" value="{{ old('county') }}">
+                                            <!-- Validation -->
+                                            @error('county')
+                                                <div class="alert alert-danger" role="alert">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                   </div>
+                                    <br>
                                     <!-- The buttons -->
                                     <div class="row">
                                         <button class="btn btn-outline-success btn-block">Submit Your Personal Details</button>
                                     </div>
 
                                 </form>
-
-                                
                             </div>
                         
                     </div>
+                                    <!-- Home and personal addresses -->
+            </div>
 
-                    <!-- <div class="card">
-
-                    </div> -->
+                    </div>
             </div>
         </div>
     </div>

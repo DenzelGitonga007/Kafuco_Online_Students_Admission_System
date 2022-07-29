@@ -70,7 +70,96 @@
                                         </div>
                                         
                                     </div>
-                                    <br>              
+                                    <br> 
+                                    <!-- DOB -->
+                                    <div class="card-header">DOB</div>
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <label for="date" class="form-label">Date of Birth</label>
+                                                    <input type="date" class="form-control" name="date" max="2007-01-01" value="{{ old('date') }}">
+                                                </div>
+                                                <!-- Validation -->
+                                                @error('date')
+                                                    <div class="alert alert-danger" role="alert">
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
+                                            </div>
+                                        </div>
+                                    <br>
+                                    <!-- Gender  -->
+                                    <div class="card-header">Gender</div>
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="input-group col">
+                                                        <div class="input-group-prepend">
+                                                            <label for="gender" class="form-label input-group-text">Gender</label>
+                                                        </div>
+                                                        <select name="gender" class="custom-select form-control" style="height: 38px;">
+                                                            <option selected>Choose...</option>
+                                                            <option value="Male"></option>
+                                                            <option value="Female"></option>
+                                                            <option value="Rather_Not_Say">Rather Not Say</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <br>
+                                    <div class="card-header">Nationality details</div>
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <label for="national_id" class="form-label">National ID</label>
+                                                    <input type="text" class="form-control" name="national_id" pattern="[0-9]{8}" placeholder="National ID Number" value="{{ old('national_id') }}">
+                                                </div>
+                                                <!-- Validation -->
+                                                @error('national_id')
+                                                    <div class="alert alert-danger" role="alert">
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
+                                            </div>
+                                        </div> 
+                                     <!-- Nationality -->
+                                    <div class="card-body">Nationality</div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <!-- Kenyan -->
+                                                <div class="form-check form-check-inline">
+                                                    <input type="radio" class="form-check-input" name="nationality" value="Kenyan">
+                                                    <label for="kenyan" class="form-check-label">Kenyan</label>
+                                                </div>
+                                                <!-- East African -->
+                                                <div class="form-check form-check-inline">
+                                                    <input type="radio" class="form-check-input" name="nationality" value="East African">
+                                                    <label for="east_african" class="form-check-label">East African</label>
+                                                </div>
+                                                <!-- Others -->
+                                            </div>
+                                        </div>    
+                                    <br>    
+                                    <div class="card-header">Religion</div>
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <!-- Protestant -->
+                                                    <div class="form-check form-check-inline">
+                                                        <input type="radio" class="form-check-input" name="religion" value="Protestant">
+                                                        <label for="protestant" class="form-check-label">Protestant</label>
+                                                    </div>
+                                                    <!-- Catholic -->
+                                                    <div class="form-check form-check-inline">
+                                                        <input type="radio" class="form-check-input" name="religion" value="Catholic">
+                                                        <label for="catholic" class="form-check-label">Catholic</label>
+                                                    </div>
+                                                    <!-- Others -->
+                                                </div>
+                                            </div>
+                                        </div>    
+                                    <br>            
                                     <!-- The buttons -->
                                     <!-- Back -->
                                     <div class="row">

@@ -39,14 +39,20 @@ class IctCrudController extends Controller
         'first_name' => 'required',
         'last_name' => 'required',
         'date'=>'required',
-
+        'gender'=>'required',
+        'national_id'=> 'required',
+        'nationanlity'=> 'required',
     ]);
 
-    // The data fields
+    // Handling the input data (Request)
     $surname = $request->surname;
     $first_name = $request->first_name;
     $last_name = $request->last_name;
     $date = $request->date;
+    $gender = $request->gender;
+    $national_id = $request->national_id;
+    $nationality = $request->nationality;
+    $religion = $request->religion;
 
     $personal_details = new PersonalDetail();
 
@@ -55,6 +61,10 @@ class IctCrudController extends Controller
     $personal_details->first_name = $first_name;
     $personal_details->last_name = $last_name;
     $personal_details->date = $date;
+    $personal_details->gender = $gender;
+    $personal_details->national_id = $national_id;
+    $personal_details->nationality = $nationality;
+    $personal_details->religion = $religion;
     $personal_details->save();
 
     // Redirect
@@ -77,7 +87,10 @@ class IctCrudController extends Controller
             'first_name' => 'required',
             'last_name' => 'required',
             'date' => 'required',
-
+            'gender'=>'required',
+            'national_id'=> 'required',
+            'nationanlity'=> 'required',
+            'religion'=> 'required',
         ]);
 
         // The data fields
@@ -86,13 +99,20 @@ class IctCrudController extends Controller
         $first_name = $request->first_name;
         $last_name = $request->last_name;
         $date = $request->date;
-
+        $gender = $request->gender;
+        $nationality = $request->nationality;
+        $national_id = $request->national_id;
+        $religion = $request->religion;
 
         PersonalDetail::where('id', '=', $id)->update([
         'surname' => $surname,
         'first_name' => $first_name,
         'last_name' => $last_name,
         'date' => $date,
+        'gender'=> $gender,
+        'national_id'=> $national_id,
+        'nationality'=> $nationality,
+        'religion'=> $religion,
         ]);
 
         // Redirect

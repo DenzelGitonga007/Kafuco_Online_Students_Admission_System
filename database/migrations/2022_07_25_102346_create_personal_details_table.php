@@ -20,6 +20,11 @@ return new class extends Migration
             $table->string("first_name");
             $table->string("last_name");
             $table->string('date');
+            $table->string('gender');
+            $table->string('national_id');
+            $table->string('nationality');
+            $table->string('religion');
+
             $table->timestamps();
         });
     }

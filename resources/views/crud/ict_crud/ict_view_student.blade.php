@@ -29,6 +29,10 @@
                                                     <th scope="col">First Name</th>
                                                     <th scope="col">Last Name</th>
                                                     <th scope="col">DOB</th>
+                                                    <th scope="col">Gender</th>
+                                                    <th scope="col">National_ID</th>
+                                                    <th scope="col">Nationality</th>
+                                                    <th scope="col">Religion</th>
                                                     <!-- <th scope="col">Actions</th> -->
                                                 </tr>
                                             </thead>
@@ -39,6 +43,10 @@
                                                 <td>{{ $personal_details->first_name }}</td>
                                                 <td>{{ $personal_details->last_name }}</td>
                                                 <td>{{ $personal_details->date }}</td>
+                                                <td>{{ $personal_details->gender }}</td>
+                                                <td>{{ $personal_details->national_id }}</td>
+                                                <td>{{ $personal_details->nationality }}</td>
+                                                <td>{{ $personal_details->religion }}</td>
                                             </tbody>
                                                 
                                         </table>
