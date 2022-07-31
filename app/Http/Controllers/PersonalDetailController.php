@@ -18,7 +18,7 @@ class PersonalDetailController extends Controller
             'date'=> 'required',
             'gender'=> 'required',
             'national_id'=> 'required',
-            'nationanlity'=> 'required',
+            'nationality'=> 'required',
             'religion'=> 'required',
         ]);
 

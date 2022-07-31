@@ -137,12 +137,12 @@
                                             <div class="col">
                                                 <!-- Kenyan -->
                                                 <div class="form-check form-check-inline">
-                                                    <input type="radio" class="form-check-input" name="nationality" value="{{ $personal_details->nationality }}">
+                                                    <input type="radio" class="form-check-input" name="nationality" value="{{ $personal_details->nationality }}" required>
                                                     <label for="kenyan" class="form-check-label">Kenyan</label>
                                                 </div>
                                                 <!-- East African -->
                                                 <div class="form-check form-check-inline">
-                                                    <input type="radio" class="form-check-input" name="nationality" value="{{ $personal_details->nationality }}">
+                                                    <input type="radio" class="form-check-input" name="nationality" value="{{ $personal_details->nationality }}" required>
                                                     <label for="east_african" class="form-check-label">East African</label>
                                                 </div>
                                                 <!-- Others -->

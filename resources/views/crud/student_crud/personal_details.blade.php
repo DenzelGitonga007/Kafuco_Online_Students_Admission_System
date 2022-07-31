@@ -162,55 +162,21 @@
                                                         <label for="catholic" class="form-check-label">Catholic</label>
                                                     </div>
                                                     <!-- Others -->
-                                                </div>
+                                                <!-- </div>
                                             </div>
-                                        </div>
+                                        </div> -->
                                     <br>
+                                    <!-- The buttons -->
+                                    <div class="row">
+                                        <button class="btn btn-outline-success btn-block">Submit Your Personal Details</button>
+                                    </div>
                                 </form>
                             </div>
                         </div>
 
         <br>
         <!-- Home and address details -->
-        <div class="row">
-            <div class="col-md-12">
-                <h2>Home and Address Details</h2>
-                    <div class="card">
-                        <div class="card-header">Your Home</div>
-                            <div class="card-body">
-                                <form action="{{ url('ict_save_details') }}" method="POST"> <!-- The route personal_details posts the details -->
-                                   <!-- The cross-site request forgery                              -->
-                                   @csrf
-                                   {!! csrf_field() !!} 
-                                   <div class="row">
-                                        <!-- county -->
-                                        <div class="col">
-                                            <label for="county" class="form-label">County</label>
-                                            <input type="text" class="form-control" placeholder="County" name="county" value="{{ old('county') }}">
-                                            <!-- Validation -->
-                                            @error('county')
-                                                <div class="alert alert-danger" role="alert">
-                                                    {{ $message }}
-                                                </div>
-                                            @enderror
-                                        </div>
-                                   </div>
-                                    <br>
-                                    <!-- The buttons -->
-                                    <div class="row">
-                                        <button class="btn btn-outline-success btn-block">Submit Your Personal Details</button>
-                                    </div>
-
-                                </form>
-                            </div>
-                        
-                    </div>
-                                    <!-- Home and personal addresses -->
-            </div>
-
-                    </div>
-            </div>
-        </div>
+        
     </div>
 </x-app-layout>
 

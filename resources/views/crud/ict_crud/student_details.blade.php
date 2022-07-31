@@ -66,6 +66,9 @@
                                         <th scope="col">Last Name</th>
                                         <th scope="col">DOB</th>
                                         <th scope="col">Gender</th>
+                                        <th scope="col">National ID</th>
+                                        <th scope="col">Nationality</th>
+                                        <th scope="col">Religion</th>
                                         <th scope="col">Actions</th>
                                     </tr>
                                 </thead>
@@ -80,6 +83,9 @@
                                         <td>{{ $personal_detail->last_name}}</td>
                                         <td>{{ $personal_detail->date }}</td>
                                         <td>{{ $personal_detail->gender }}</td>
+                                        <td>{{ $personal_detail->national_id}}</td>
+                                        <td>{{ $personal_detail->nationality }}</td>
+                                        <td>{{ $personal_detail->religion }}</td>
                                         <!-- The crud actions buttons -->
                                         <td>
                                         <!-- <a href="{{ url('student_details' . $personal_detail->id)}}" title="View Student">

@@ -41,7 +41,7 @@ class IctCrudController extends Controller
         'date'=>'required',
         'gender'=>'required',
         'national_id'=> 'required',
-        'nationanlity'=> 'required',
+        'nationality'=> 'required',
     ]);
 
     // Handling the input data (Request)
@@ -89,7 +89,7 @@ class IctCrudController extends Controller
             'date' => 'required',
             'gender'=>'required',
             'national_id'=> 'required',
-            'nationanlity'=> 'required',
+            'nationality'=> 'required',
             'religion'=> 'required',
         ]);
 
@@ -100,8 +100,8 @@ class IctCrudController extends Controller
         $last_name = $request->last_name;
         $date = $request->date;
         $gender = $request->gender;
-        $nationality = $request->nationality;
         $national_id = $request->national_id;
+        $nationality = $request->nationality;
         $religion = $request->religion;
 
         PersonalDetail::where('id', '=', $id)->update([
