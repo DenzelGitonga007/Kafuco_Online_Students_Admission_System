@@ -21,10 +21,13 @@
         <!-- Personal details -->
         <div class="row">
             <div class="col-md-12">
-                <h2>Personal Details</h2>
+                <!-- <h2>Personal Details</h2> -->
                 <!-- Name -->
                     <div class="card">
                         <!-- Name -->
+                        <h2 class="card-header">Personal details</h2>
+                        <br>
+                        <!-- <h5 class="card-title text-muted" style="margin-left: 15px;">Your Name</h5> -->
                         <div class="card-header">Your Name</div>
                             <div class="card-body">
                                 <form action="{{ url('student_upload_personal_details') }}" method="POST"> <!-- The route personal_details posts the details -->
@@ -162,20 +165,84 @@
                                                         <label for="catholic" class="form-check-label">Catholic</label>
                                                     </div>
                                                     <!-- Others -->
-                                                <!-- </div>
+                                                </div>
                                             </div>
-                                        </div> -->
+                                        </div> 
+                                    <br>
+
+                                    <!-- Home and address details -->
+                                    <h2 class="card-header">Home and Address Details</h2>
+                                    <br>
+                                        <div class="card-header">Your Contact Addresses</div>
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <!-- Email -->
+                                                    <div class="col">
+                                                        <label for="email" class="form-label">Email</label>
+                                                        <input type="email" class="form-control" placeholder="Enter your email" name="email" value="{{ old('email') }}">
+                                                        <!-- Validation -->
+                                                        @error('email')
+                                                            <div class="alert alert-danger" role="alert">
+                                                                {{ $message }}
+                                                            </div>
+                                                        @enderror
+                                                    </div>
+                                                    <!-- Phone -->
+                                                    <div class="col">
+                                                        <label for="phone" class="form-label">Phone Number</label>
+                                                        <div class="input-group">
+                                                            <span class="input-group-text">+254</span>
+                                                            <input type="tel" class="form-control" placeholder="7000000**" name="phone" pattern="[0-9]{9}" value="{{ old('phone') }}">
+                                                        </div>
+                                                        <!-- Validation -->
+                                                        @error('phone')
+                                                            <div class="alert alert-danger" role="alert">
+                                                                {{ $message }}
+                                                            </div>
+                                                        @enderror
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    <br>
+                                        <div class="card-header">Your Home Address</div>
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <!-- City/Town -->
+                                                    <div class="col">
+                                                        <label for="city" class="form-label">City/Town</label>
+                                                        <input type="text" class="form-control" placeholder="Which is your closest city/town" name="city" value="{{ old('city') }}">
+                                                        <!-- Validation -->
+                                                        @error('city')
+                                                            <div class="alert alert-danger" role="alert">
+                                                                {{ $message }}
+                                                            </div>
+                                                        @enderror
+                                                    </div>
+                                                    <!-- P.O BOX -->
+                                                    <div class="col">
+                                                        <label for="pob" class="form-label">P.O BOX</label>
+                                                        <input type="text" class="form-control" placeholder="Enter your P.O BOX" name="pob" value="{{ old('pob') }}">
+                                                        <!-- Validation -->
+                                                        @error('pob')
+                                                            <div class="alert alert-danger" role="alert">
+                                                                {{ $message }}
+                                                            </div>
+                                                        @enderror
+                                                    </div>
+                                                </div>
+                                            </div>
                                     <br>
                                     <!-- The buttons -->
                                     <div class="row">
                                         <button class="btn btn-outline-success btn-block">Submit Your Personal Details</button>
                                     </div>
+
                                 </form>
                             </div>
                         </div>
-
+        </div>
+                
         <br>
-        <!-- Home and address details -->
         
     </div>
 </x-app-layout>

@@ -26,8 +26,10 @@
                         <a href="" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                     </div>
                 @endif
-                <h2>Personal Details</h2>
+                
                     <div class="card">
+                    <h2 class="card-header">Personal Details</h2>
+                    <br>
                         <div class="card-header">Your Name</div>
                             <div class="card-body">
                                 <form action="{{ url('ict_save_details') }}" method="POST"> <!-- The route personal_details posts the details -->
@@ -99,8 +101,8 @@
                                                         </div>
                                                         <select name="gender" class="custom-select form-control" style="height: 38px;">
                                                             <option selected>Choose...</option>
-                                                            <option value="Male"></option>
-                                                            <option value="Female"></option>
+                                                            <option value="Male">Male</option>
+                                                            <option value="Female">Female</option>
                                                             <option value="Rather_Not_Say">Rather Not Say</option>
                                                         </select>
                                                     </div>
@@ -159,7 +161,69 @@
                                                 </div>
                                             </div>
                                         </div>    
-                                    <br>            
+                                    <br>
+                                    <!-- Home and Address Details -->
+                                    <h2 class="card-header">Home and Address Details<h2>
+                                    <br>  
+                                        <div class="card-header">Contact Addresses</div>
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <!-- Email -->
+                                                    <div class="col">
+                                                        <label for="email" class="form-label">Email</label>
+                                                        <input type="email" class="form-control" placeholder="Enter email address" name="email" value="{{ old('email') }}">
+                                                        <!-- Validation -->
+                                                        @error('email')
+                                                            <div class="alert alert-danger" role="alert">
+                                                                {{ $message }}
+                                                            </div>
+                                                        @enderror
+                                                    </div>
+                                                    <!-- Phone -->
+                                                    <div class="col">
+                                                        <label for="phone" class="form-label">Phone Number</label>
+                                                        <div class="input-group">
+                                                            <span class="input-group-text">+254</span>
+                                                            <input type="tel" class="form-control" placeholder="7000000**" name="phone" pattern="[0-9]{9}" value="{{ old('phone') }}">
+                                                        </div>
+                                                        <!-- Validation -->
+                                                        @error('phone')
+                                                            <div class="alert alert-danger" role="alert">
+                                                                {{ $message }}
+                                                            </div>
+                                                        @enderror
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    <br>
+                                    <div class="card-header">Your Home Address</div>
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <!-- City/Town -->
+                                                    <div class="col">
+                                                        <label for="city" class="form-label">City/Town</label>
+                                                        <input type="text" class="form-control" placeholder="Which is your closest city/town" name="city" value="{{ old('city') }}">
+                                                        <!-- Validation -->
+                                                        @error('city')
+                                                            <div class="alert alert-danger" role="alert">
+                                                                {{ $message }}
+                                                            </div>
+                                                        @enderror
+                                                    </div>
+                                                    <!-- P.O BOX -->
+                                                    <div class="col">
+                                                        <label for="pob" class="form-label">P.O BOX</label>
+                                                        <input type="text" class="form-control" placeholder="Enter your P.O BOX" name="pob" value="{{ old('pob') }}">
+                                                        <!-- Validation -->
+                                                        @error('pob')
+                                                            <div class="alert alert-danger" role="alert">
+                                                                {{ $message }}
+                                                            </div>
+                                                        @enderror
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    <br>                 
                                     <!-- The buttons -->
                                     <!-- Back -->
                                     <div class="row">

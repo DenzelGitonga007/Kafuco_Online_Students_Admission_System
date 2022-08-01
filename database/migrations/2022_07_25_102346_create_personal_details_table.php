@@ -24,6 +24,10 @@ return new class extends Migration
             $table->string('national_id');
             $table->string('nationality');
             $table->string('religion');
+            $table->string('email');
+            $table->string('phone');
+            $table->string('city');
+            $table->string('pob');
 
             $table->timestamps();
         });

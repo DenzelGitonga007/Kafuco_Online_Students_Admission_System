@@ -55,8 +55,8 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="table-responsive">
+                            <caption>Details of the students</caption>
                             <table class="table table-hover table-bordered table-striped table-sm">
-                                <caption>Details of the students</caption>
                                 <thead class="thead-dark">
                                     <tr>
                                     <!-- Table columns -->
@@ -69,6 +69,11 @@
                                         <th scope="col">National ID</th>
                                         <th scope="col">Nationality</th>
                                         <th scope="col">Religion</th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">Phone</th>
+                                        <th scope="col">City/Town</th>
+                                        <th scope="col">P.O BOX</th>
+
                                         <th scope="col">Actions</th>
                                     </tr>
                                 </thead>
@@ -86,6 +91,11 @@
                                         <td>{{ $personal_detail->national_id}}</td>
                                         <td>{{ $personal_detail->nationality }}</td>
                                         <td>{{ $personal_detail->religion }}</td>
+                                        <td>{{ $personal_detail->email }}</td>
+                                        <td>{{ $personal_detail->phone }}</td>
+                                        <td>{{ $personal_detail->city }}</td>
+                                        <td>{{ $personal_detail->pob }}</td>
+
                                         <!-- The crud actions buttons -->
                                         <td>
                                         <!-- <a href="{{ url('student_details' . $personal_detail->id)}}" title="View Student">

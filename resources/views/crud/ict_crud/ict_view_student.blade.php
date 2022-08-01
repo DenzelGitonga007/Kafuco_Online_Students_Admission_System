@@ -33,6 +33,10 @@
                                                     <th scope="col">National_ID</th>
                                                     <th scope="col">Nationality</th>
                                                     <th scope="col">Religion</th>
+                                                    <th scope="col">Email</th>
+                                                    <th scope="col">Phone</th>
+                                                    <th scope="col">City/Town</th>
+                                                    <th scope="col">P.O BOX</th>
                                                     <!-- <th scope="col">Actions</th> -->
                                                 </tr>
                                             </thead>
@@ -47,6 +51,10 @@
                                                 <td>{{ $personal_details->national_id }}</td>
                                                 <td>{{ $personal_details->nationality }}</td>
                                                 <td>{{ $personal_details->religion }}</td>
+                                                <td>{{ $personal_details->email }}</td>
+                                                <td>{{ $personal_details->phone }}</td>
+                                                <td>{{ $personal_details->city }}</td>
+                                                <td>{{ $personal_details->pob }}</td>
                                             </tbody>
                                                 
                                         </table>

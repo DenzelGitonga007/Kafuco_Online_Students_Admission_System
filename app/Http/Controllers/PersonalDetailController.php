@@ -20,6 +20,10 @@ class PersonalDetailController extends Controller
             'national_id'=> 'required',
             'nationality'=> 'required',
             'religion'=> 'required',
+            'email'=> 'required',
+            'phone'=> 'required',
+            'city'=> 'required',
+            'pob'=> 'required',
         ]);
 
         // Handling the input data (Request)
@@ -31,6 +35,10 @@ class PersonalDetailController extends Controller
         $national_id = $request->national_id;
         $nationality = $request->nationality;
         $religion = $request->religion;
+        $email = $request->email;
+        $phone = $request->phone;
+        $city = $request->city;
+        $pob = $request->pob;
 
         // Saving  into the database
         $personal_details = new PersonalDetail(); //Upload a new record through the model
@@ -42,6 +50,11 @@ class PersonalDetailController extends Controller
         $personal_details->national_id = $national_id;
         $personal_details->nationality = $nationality;
         $personal_details->religion = $religion;
+        $personal_details->email = $email;
+        $personal_details->phone = $phone;
+        $personal_details->city = $city;
+        $personal_details->pob = $pob;
+
         $personal_details->save();
 
         // After saving the data into the db, return success message

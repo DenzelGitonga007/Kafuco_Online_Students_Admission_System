@@ -35,13 +35,16 @@ class IctCrudController extends Controller
     // Validation
     $request->validate([
         'surname' => 'required',
-        // 'email' => 'required|email',
         'first_name' => 'required',
         'last_name' => 'required',
         'date'=>'required',
         'gender'=>'required',
         'national_id'=> 'required',
         'nationality'=> 'required',
+        'email' => 'required',
+        'phone'=> 'required',
+        'city'=> 'required',
+        'pob'=> 'required',
     ]);
 
     // Handling the input data (Request)
@@ -53,6 +56,10 @@ class IctCrudController extends Controller
     $national_id = $request->national_id;
     $nationality = $request->nationality;
     $religion = $request->religion;
+    $email = $request->email;
+    $phone = $request->phone;
+    $city = $request->city;
+    $pob = $request->pob;
 
     $personal_details = new PersonalDetail();
 
@@ -65,6 +72,11 @@ class IctCrudController extends Controller
     $personal_details->national_id = $national_id;
     $personal_details->nationality = $nationality;
     $personal_details->religion = $religion;
+    $personal_details->email = $email;
+    $personal_details->phone = $phone;
+    $personal_details->city = $city;
+    $personal_details->pob = $pob;
+
     $personal_details->save();
 
     // Redirect
@@ -91,6 +103,10 @@ class IctCrudController extends Controller
             'national_id'=> 'required',
             'nationality'=> 'required',
             'religion'=> 'required',
+            'email' => 'required',
+            'phone' => 'required',
+            'city'=> 'required',
+            'pob'=> 'required',
         ]);
 
         // The data fields
@@ -103,6 +119,10 @@ class IctCrudController extends Controller
         $national_id = $request->national_id;
         $nationality = $request->nationality;
         $religion = $request->religion;
+        $email = $request->email;
+        $phone = $request->phone;
+        $city = $request->city;
+        $pob = $request->pob;
 
         PersonalDetail::where('id', '=', $id)->update([
         'surname' => $surname,
@@ -113,6 +133,11 @@ class IctCrudController extends Controller
         'national_id'=> $national_id,
         'nationality'=> $nationality,
         'religion'=> $religion,
+        'email'=> $email,
+        'phone'=> $phone,
+        'city'=> $city,
+        'pob'=> $pob,
+
         ]);
 
         // Redirect
