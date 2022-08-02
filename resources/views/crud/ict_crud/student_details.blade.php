@@ -73,6 +73,26 @@
                                         <th scope="col">Phone</th>
                                         <th scope="col">City/Town</th>
                                         <th scope="col">P.O BOX</th>
+                                        <th scope="col">Marital Status</th>
+                                        <th scope="col">Spouse's Surname</th>
+                                        <th scope="col">Spouse's First Name</th>
+                                        <th scope="col">Spouse's Last Name</th>
+                                        <th scope="col">Spouse's Email</th>
+                                        <th scope="col">Spouse's Phone Number</th>
+                                        <th scope="col">Spouse's City/Town</th>
+                                        <th scope="col">Spouse's P.O BOX</th>
+                                        <th scope="col">Father</th>
+                                        <th scope="col">Father's Surname</th>
+                                        <th scope="col">Father's First Name</th>
+                                        <th scope="col">Father's Last Name</th>
+                                        <th scope="col">Father's Date of Birth</th>
+                                        <th scope="col">Father's Occupation</th>
+                                        <th scope="col">Mother</th>
+                                        <th scope="col">Mother's Surname</th>
+                                        <th scope="col">Mother's First Name</th>
+                                        <th scope="col">Mother's Last Nname</th>
+                                        <th scope="col">Mother's Date of Birth</th>
+                                        <th scope="col">Mother's Occupation</th>
 
                                         <th scope="col">Actions</th>
                                     </tr>
@@ -95,6 +115,26 @@
                                         <td>{{ $personal_detail->phone }}</td>
                                         <td>{{ $personal_detail->city }}</td>
                                         <td>{{ $personal_detail->pob }}</td>
+                                        <td>{{ $personal_detail->marital_status }}</td>
+                                        <td>{{ $personal_detail->spouse_surname }}</td>
+                                        <td>{{ $personal_detail->spouse_first_name }}</td>
+                                        <td>{{ $personal_detail->spouse_last_name }}</td>
+                                        <td>{{ $personal_detail->spouse_email }}</td>
+                                        <td>{{ $personal_detail->spouse_phone }}</td>
+                                        <td>{{ $personal_detail->spouse_city }}</td>
+                                        <td>{{ $personal_detail->spouse_pob }}</td>
+                                        <td>{{ $personal_detail->father }}</td>
+                                        <td>{{ $personal_detail->father_surname }}</td>
+                                        <td>{{ $personal_detail->father_first_name }}</td>
+                                        <td>{{ $personal_detail->father_last_name }}</td>
+                                        <td>{{ $personal_detail->father_date }}</td>
+                                        <td>{{ $personal_detail->father_occupation }}</td>
+                                        <td>{{ $personal_detail->mother }}</td>
+                                        <td>{{ $personal_detail->mother_surname }}</td>
+                                        <td>{{ $personal_detail->mother_first_name }}</td>
+                                        <td>{{ $personal_detail->mother_last_name }}</td>
+                                        <td>{{ $personal_detail->mother_date }}</td>
+                                        <td>{{ $personal_detail->mother_occupation }}</td>
 
                                         <!-- The crud actions buttons -->
                                         <td>
