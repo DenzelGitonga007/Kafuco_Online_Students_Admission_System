@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PersonalDetailController;
 use App\Http\Controllers\IctCrudController;
+use App\Http\Controllers\SpouseDetailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,8 +33,12 @@ Route::middleware([
     
     // To prevent login from the url using /dashboard
     Route::get('/dashboard', [UserController::class, "roles"])->name('dashboard');
+
     //To prevent login from the url using /redirects
     Route::get('/redirects', [UserController::class, "roles"])->name('dashboard');
+
+    // To prevent going to the spouse details from the url
+    // Route::get('/spouse_details', [UserController::class, "roles"])->name('dashboard');
     
 });
 
@@ -41,10 +46,19 @@ Route::middleware([
 // Student Crud
 
 // Personal Details
-Route::post('/student_upload_personal_details', [PersonalDetailController::class, "uploadDetails"]);
 
 // View the personal_details after posting
-Route::get('student_view_personal_details', [PersonalDetailController::class, "viewDetails"]);
+// Route::get('student_view_personal_details', [PersonalDetailController::class, "viewPersonalDetails"]);
+
+// Uploading the personal details into the db
+Route::post('/student_upload_personal_details', [PersonalDetailController::class, "uploadPersonalDetails"]);
+
+
+//Spouse details form
+Route::get('spouse_details', [SpouseDetailController::class, "viewSpouseDetails"]);
+
+// Uploading the spouse details
+Route::post('student_upload_spouse_details', [SpouseDetailController::class, "uploadSpouseDetails"]);
 
 //Ict crud
 // Reading/viewing the personal details
@@ -67,6 +81,9 @@ Route::post('ict_update_details', [IctCrudController::class, "updateDetails"]);
 
 // Deleting
 Route::get('delete_student/{id}', [IctCrudController::class, "deleteStudent"]);
+
+
+
 
 
     

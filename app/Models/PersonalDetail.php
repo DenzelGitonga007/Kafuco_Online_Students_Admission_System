@@ -11,5 +11,9 @@ class PersonalDetail extends Model
     // Protecting the fields
     protected $table = 'personal_details';
     protected $primaryKey = 'id';
-    protected $fillable = ['surname', 'first_name', 'last_name'];
+    protected $fillable = [
+        'surname', 
+        'first_name', 
+        'last_name'
+    ];
 }

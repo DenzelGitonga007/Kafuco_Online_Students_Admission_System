@@ -73,6 +73,8 @@
                                         <th scope="col">Phone</th>
                                         <th scope="col">City/Town</th>
                                         <th scope="col">P.O BOX</th>
+
+                                        <!-- Spouse -->
                                         <th scope="col">Marital Status</th>
                                         <th scope="col">Spouse's Surname</th>
                                         <th scope="col">Spouse's First Name</th>
@@ -81,12 +83,16 @@
                                         <th scope="col">Spouse's Phone Number</th>
                                         <th scope="col">Spouse's City/Town</th>
                                         <th scope="col">Spouse's P.O BOX</th>
+
+                                        <!-- Father -->
                                         <th scope="col">Father</th>
                                         <th scope="col">Father's Surname</th>
                                         <th scope="col">Father's First Name</th>
                                         <th scope="col">Father's Last Name</th>
                                         <th scope="col">Father's Date of Birth</th>
                                         <th scope="col">Father's Occupation</th>
+
+                                        <!-- Mother -->
                                         <th scope="col">Mother</th>
                                         <th scope="col">Mother's Surname</th>
                                         <th scope="col">Mother's First Name</th>
@@ -98,37 +104,44 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-
-                                   @foreach ($personal_details as $personal_detail)
                                     <tr>
-                                        <th scope="row">{{ $personal_detail->id }}</th>
-                                        <!-- <th scope="row">{{ $loop->iteration }}</th> -->
-                                        <td>{{ $personal_detail->surname }}</td>
-                                        <td>{{ $personal_detail->first_name }}</td>
-                                        <td>{{ $personal_detail->last_name}}</td>
-                                        <td>{{ $personal_detail->date }}</td>
-                                        <td>{{ $personal_detail->gender }}</td>
-                                        <td>{{ $personal_detail->national_id}}</td>
-                                        <td>{{ $personal_detail->nationality }}</td>
-                                        <td>{{ $personal_detail->religion }}</td>
-                                        <td>{{ $personal_detail->email }}</td>
-                                        <td>{{ $personal_detail->phone }}</td>
-                                        <td>{{ $personal_detail->city }}</td>
-                                        <td>{{ $personal_detail->pob }}</td>
-                                        <td>{{ $personal_detail->marital_status }}</td>
-                                        <td>{{ $personal_detail->spouse_surname }}</td>
-                                        <td>{{ $personal_detail->spouse_first_name }}</td>
-                                        <td>{{ $personal_detail->spouse_last_name }}</td>
-                                        <td>{{ $personal_detail->spouse_email }}</td>
-                                        <td>{{ $personal_detail->spouse_phone }}</td>
-                                        <td>{{ $personal_detail->spouse_city }}</td>
-                                        <td>{{ $personal_detail->spouse_pob }}</td>
+                                        <!-- Reading the personal details from -->
+                                        @foreach ($personal_details as $personal_detail)
+                                            <th scope="row">{{ $personal_detail->id }}</th>
+                                            <td>{{ $personal_detail->surname }}</td>
+                                            <td>{{ $personal_detail->first_name }}</td>
+                                            <td>{{ $personal_detail->last_name}}</td>
+                                            <td>{{ $personal_detail->date }}</td>
+                                            <td>{{ $personal_detail->gender }}</td>
+                                            <td>{{ $personal_detail->national_id}}</td>
+                                            <td>{{ $personal_detail->nationality }}</td>
+                                            <td>{{ $personal_detail->religion }}</td>
+                                            <td>{{ $personal_detail->email }}</td>
+                                            <td>{{ $personal_detail->phone }}</td>
+                                            <td>{{ $personal_detail->city }}</td>
+                                            <td>{{ $personal_detail->pob }}</td>
+                                        @endforeach
+
+                                        <!-- Reading the spouse details -->
+                                        @foreach ($spouse_details as $spouse_detail)
+                                        <td>{{ $spouse_detail->marital_status }}</td>
+                                        <td>{{ $spouse_detail->spouse_surname }}</td>
+                                        <td>{{ $spouse_detail->spouse_first_name }}</td>
+                                        <td>{{ $spouse_detail->spouse_last_name }}</td>
+                                        <td>{{ $spouse_detail->spouse_email }}</td>
+                                        <td>{{ $spouse_detail->spouse_phone }}</td>
+                                        <td>{{ $spouse_detail->spouse_city }}</td>
+                                        <td>{{ $spouse_detail->spouse_pob }}</td>
+                                        @endforeach
+                                        <!-- Father -->
                                         <td>{{ $personal_detail->father }}</td>
                                         <td>{{ $personal_detail->father_surname }}</td>
                                         <td>{{ $personal_detail->father_first_name }}</td>
                                         <td>{{ $personal_detail->father_last_name }}</td>
                                         <td>{{ $personal_detail->father_date }}</td>
                                         <td>{{ $personal_detail->father_occupation }}</td>
+
+                                        <!-- Mother -->
                                         <td>{{ $personal_detail->mother }}</td>
                                         <td>{{ $personal_detail->mother_surname }}</td>
                                         <td>{{ $personal_detail->mother_first_name }}</td>
@@ -159,7 +172,6 @@
 
                                     </tr>
 
-                                   @endforeach
                                 </tbody>
                             </table>
                         </div>
