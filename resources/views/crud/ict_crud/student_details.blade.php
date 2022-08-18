@@ -85,20 +85,20 @@
                                         <th scope="col">Spouse's P.O BOX</th>
 
                                         <!-- Father -->
-                                        <th scope="col">Father</th>
+                                        <!-- <th scope="col">Father</th>
                                         <th scope="col">Father's Surname</th>
                                         <th scope="col">Father's First Name</th>
                                         <th scope="col">Father's Last Name</th>
                                         <th scope="col">Father's Date of Birth</th>
-                                        <th scope="col">Father's Occupation</th>
+                                        <th scope="col">Father's Occupation</th> -->
 
                                         <!-- Mother -->
-                                        <th scope="col">Mother</th>
+                                        <!-- <th scope="col">Mother</th>
                                         <th scope="col">Mother's Surname</th>
                                         <th scope="col">Mother's First Name</th>
                                         <th scope="col">Mother's Last Nname</th>
                                         <th scope="col">Mother's Date of Birth</th>
-                                        <th scope="col">Mother's Occupation</th>
+                                        <th scope="col">Mother's Occupation</th> -->
 
                                         <th scope="col">Actions</th>
                                     </tr>
@@ -133,28 +133,33 @@
                                         <td>{{ $spouse_detail->spouse_city }}</td>
                                         <td>{{ $spouse_detail->spouse_pob }}</td>
                                         @endforeach
+                                        
+                                        
                                         <!-- Father -->
-                                        <td>{{ $personal_detail->father }}</td>
+                                        <!-- @foreach ($personal_details as $personal_detail) -->
+                                        <!-- <td>{{ $personal_detail->father }}</td>
                                         <td>{{ $personal_detail->father_surname }}</td>
                                         <td>{{ $personal_detail->father_first_name }}</td>
                                         <td>{{ $personal_detail->father_last_name }}</td>
                                         <td>{{ $personal_detail->father_date }}</td>
-                                        <td>{{ $personal_detail->father_occupation }}</td>
+                                        <td>{{ $personal_detail->father_occupation }}</td> -->
 
                                         <!-- Mother -->
-                                        <td>{{ $personal_detail->mother }}</td>
+                                        <!-- <td>{{ $personal_detail->mother }}</td>
                                         <td>{{ $personal_detail->mother_surname }}</td>
                                         <td>{{ $personal_detail->mother_first_name }}</td>
                                         <td>{{ $personal_detail->mother_last_name }}</td>
                                         <td>{{ $personal_detail->mother_date }}</td>
-                                        <td>{{ $personal_detail->mother_occupation }}</td>
-
+                                        <td>{{ $personal_detail->mother_occupation }}</td> -->
+                                        <!-- @endforeach -->
                                         <!-- The crud actions buttons -->
+                                        @foreach ($personal_details as $personal_detail)
                                         <td>
                                         <!-- <a href="{{ url('student_details' . $personal_detail->id)}}" title="View Student">
                                             <button class="btn btn-info btn-sm">View</button>
                                         </a> -->
                                             <!-- View -->
+                                            
                                             <a href="{{ url('view_student/' . $personal_detail->id) }}" class="btn btn-outline-info btn-sm">
                                                 View
                                             </a>
@@ -166,8 +171,8 @@
                                             <a href="{{ url('delete_student/' . $personal_detail->id) }}" class="btn btn-outline-danger btn-sm" style="margin-left: 4px;">
                                                 Delete
                                             </a>
-
                                         </td>
+                                        @endforeach
                                         
 
                                     </tr>
