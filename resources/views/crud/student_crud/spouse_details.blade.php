@@ -136,7 +136,7 @@
                                                     <!-- City/Town -->
                                                     <div class="col">
                                                         <label for="spouse_city" class="form-label">City/Town</label>
-                                                        <input type="text" class="form-control" placeholder="Which is your spouse's closest city/town" name="spouse_city" value="{{ old('city') }}">
+                                                        <input type="text" class="form-control" placeholder="Which is your spouse's closest city/town" name="spouse_city" value="{{ old('spouse_city') }}">
 
                                                         <!-- Alternative Fill -->
                                                         <div class="form-text">Type "N/A" if not applicable</div>
@@ -145,7 +145,7 @@
                                                     <!-- P.O BOX -->
                                                     <div class="col">
                                                         <label for="spouse_pob" class="form-label">P.O BOX</label>
-                                                        <input type="text" class="form-control" placeholder="Enter your spouse's P.O BOX" name="spouse_pob" value="{{ old('pob') }}">
+                                                        <input type="text" class="form-control" placeholder="Enter your spouse's P.O BOX" name="spouse_pob" value="{{ old('spouse_pob') }}">
 
                                                         <!-- Alternative Fill -->
                                                         <div class="form-text">Type "N/A" if not applicable</div>
@@ -154,7 +154,7 @@
                                                 </div>
                                             </div>
 
-                                            <!-- Spouse's Occupation    -->
+                                            <!-- Occupation    -->
                                             <div class="card-header">Occupation</div>
                                             <div class="card-body">
                                                 <div class="row">

@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PersonalDetailController;
 use App\Http\Controllers\IctCrudController;
+use App\Http\Controllers\ParentDetailController;
 use App\Http\Controllers\SpouseDetailController;
 
 /*
@@ -43,6 +44,7 @@ Route::middleware([
 });
 
 // The crud routes
+
 // Student Crud
 
 // Personal Details
@@ -55,10 +57,19 @@ Route::post('/student_upload_personal_details', [PersonalDetailController::class
 
 
 //Spouse details form
-Route::get('spouse_details', [SpouseDetailController::class, "viewSpouseDetails"]);
+// Viewing the form
+Route::get('spouse_details', [SpouseDetailController::class, "viewSpouseDetailsForm"]);
 
 // Uploading the spouse details
 Route::post('student_upload_spouse_details', [SpouseDetailController::class, "uploadSpouseDetails"]);
+
+// The parent details form
+
+// Viewing the form
+Route::get('parent_details', [ParentDetailController::class, "viewParentDetailsForm"]);
+
+// Uploading the parent details
+Route::post('student_upload_parent_details', [ParentDetailController::class, "uploadParentDetails"]);
 
 //Ict crud
 // Reading/viewing the personal details

@@ -19,15 +19,15 @@ return new class extends Migration
             // Additional fields
             // Spouse
             $table->string('marital_status');
-            $table->string('spouse_surname')->nullable()->default("N/A");
-            $table->string('spouse_first_name')->nullable()->default("N/A");
-            $table->string('spouse_last_name')->nullable()->default("N/A");
-            $table->string('spouse_national_id')->nullable()->default("N/A");
-            $table->string('spouse_email')->nullable()->default("N/A");
-            $table->string('spouse_phone')->nullable()->default("N/A");
-            $table->string('spouse_city')->nullable()->default("N/A");
-            $table->string('spouse_pob')->nullable()->default("N/A");
-            $table->string('spouse_occupation')->nullable()->default("N/A");
+            $table->string('spouse_surname')->nullable()->default("0");
+            $table->string('spouse_first_name')->nullable()->default("0");
+            $table->string('spouse_last_name')->nullable()->default("0");
+            $table->string('spouse_national_id')->nullable()->default("0");
+            $table->string('spouse_email')->nullable()->default("0");
+            $table->string('spouse_phone')->nullable()->default("0");
+            $table->string('spouse_city')->nullable()->default("0");
+            $table->string('spouse_pob')->nullable()->default("0");
+            $table->string('spouse_occupation')->nullable()->default("0");
 
 
             $table->timestamps();

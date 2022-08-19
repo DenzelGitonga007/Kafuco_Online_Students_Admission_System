@@ -25,25 +25,6 @@ class PersonalDetailController extends Controller
             'city'=> 'required',
             'pob'=> 'required',
 
-            
-
-            // // Father
-            // 'father'=>'required',
-            // 'father_surname'=> '',
-            // 'father_first_name'=> '',
-            // 'father_last_name'=> '',
-            // 'father_date'=> '',
-            // 'father_occupation'=> '',
-
-            // // Mother
-            // 'mother'=>'required',
-            // 'mother_surname'=> '',
-            // 'mother_first_name'=> '',
-            // 'mother_last_name'=> '',
-            // 'mother_date'=> '',
-            // 'mother_occupation'=> '',
-
-
         ]);
 
         // Fetching the input data (Request)
@@ -93,28 +74,10 @@ class PersonalDetailController extends Controller
         $personal_details->city = $city;
         $personal_details->pob = $pob;
 
-        
-
-        // // Father
-        // $personal_details->father = $father;
-        // $personal_details->father_surname = $father_surname;
-        // $personal_details->father_first_name = $father_first_name;
-        // $personal_details->father_last_name = $father_last_name;
-        // $personal_details->father_date = $father_date;
-        // $personal_details->father_occupation = $father_occupation;
-
-        // // Mother
-        // $personal_details->mother = $mother;
-        // $personal_details->mother_surname = $mother_surname;
-        // $personal_details->mother_first_name = $mother_first_name;
-        // $personal_details->mother_last_name = $mother_last_name;
-        // $personal_details->mother_date = $mother_date;
-        // $personal_details->mother_occupation = $mother_occupation;
-
         $personal_details->save();
 
-        // After saving the data into the db, proceed to the spouse details page with the success message
-        return redirect()->to('spouse_details')->with('success', "Your personal details have been received successfully! Now fill the spouse details...");
+        // After saving the data into the db, proceed to the parent details page with the success message
+        return redirect()->to('parent_details')->with('success', "Your personal details have been received successfully! Now fill the parent details...");
     }
 
     // // Viewing the personal details

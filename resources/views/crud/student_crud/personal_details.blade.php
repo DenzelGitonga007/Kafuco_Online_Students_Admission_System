@@ -12,19 +12,19 @@
     </x-slot>
     <!-- The body -->
     <div class="container" style="margin-top: 50px;">
-    <!-- Success message -->
-    @if (Session::has('success'))
-        <div class="alert alert-success" role="alert">
-            {{ Session::get('success') }}
-        </div>
-    @endif
+        <!-- Success message -->
+        @if (Session::has('success'))
+            <div class="alert alert-success" role="alert">
+                {{ Session::get('success') }}
+            </div>
+        @endif
         <!-- Personal details -->
         <div class="row">
             <div class="col-md-12">
-                <!-- <h2>Personal Details</h2> -->
+                
                 <!-- Name -->
                     <div class="card">
-                        <form action="{{ url('student_upload_personal_details') }}" method="POST"> <!-- The route personal_details posts the details -->
+                        <form action="{{ url('student_upload_personal_details') }}" method="POST"> <!-- The url/route personal_details posts the details -->
                             <!-- The cross-site request forgery     -->
                             @csrf
                             {!! csrf_field() !!}
@@ -35,7 +35,7 @@
                                 <div class="card-header">Your Name</div>
                                     <div class="card-body">
                                         <div class="row">
-                                            <!-- surname -->
+                                            <!-- Surname -->
                                             <div class="col">
                                                 <label for="surname" class="form-label">Surname</label>
                                                 <input type="text" class="form-control" placeholder="Surname" name="surname" value="{{ old('surname') }}">
@@ -46,7 +46,7 @@
                                                     {{$message}}
                                                 </div>
                                             @enderror
-                                            <!-- first_name -->
+                                            <!-- First_name -->
                                             <div class="col">
                                                 <label for="first_name" class="form-label">First Name</label>
                                                 <input type="text" class="form-control" placeholder="First Name" name="first_name" value="{{ old('first_name') }}">
@@ -57,7 +57,7 @@
                                                     {{$message}}
                                                 </div>
                                             @enderror
-                                            <!-- last_name -->
+                                            <!-- Last_name -->
                                             <div class="col">
                                                 <label for="last_name" class="form-label">Last Name</label>
                                                 <input type="text" class="form-control" placeholder="Last Name" name="last_name" value="{{ old('last_name') }}">

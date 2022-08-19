@@ -2,13 +2,21 @@
 
 namespace App\Http\Controllers;
 
+// Call the models, to retrieve the data
+// PersonalDetail
+use App\Models\PersonalDetail;
+// SpouseDetail
+use App\Models\SpouseDetail;
+// ParentDetail
+use App\Models\ParentDetail;
+
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 use function Ramsey\Uuid\v1;
 // use App\Http\Controllers\IctCrudController;
-use App\Models\PersonalDetail;
-use App\Models\SpouseDetail;
+
 
 class UserController extends Controller
 {
@@ -23,7 +31,8 @@ class UserController extends Controller
         // return view('crud.ict_crud.student_details');
         $personal_details = PersonalDetail::get();
         $spouse_details = SpouseDetail::get();
-        return view('crud.ict_crud.student_details', compact('personal_details', 'spouse_details'));
+        $parent_details = ParentDetail::get();
+        return view('crud.ict_crud.student_details', compact('personal_details', 'spouse_details', 'parent_details'));
     }
 
     elseif ($role == '2') {

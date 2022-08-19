@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-// Call the model
+// Call the SpouseDetail model
 use App\Models\SpouseDetail;
 
 class SpouseDetailController extends Controller
 {
     // View the spouse details form
-    public function viewSpouseDetails() {
+    public function viewSpouseDetailsForm() {
         return view('crud.student_crud.spouse_details');
     }
 

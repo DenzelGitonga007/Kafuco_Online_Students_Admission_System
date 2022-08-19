@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class PersonalDetail extends Model
 {
     use HasFactory;
-    // Protecting the fields
+    // Indicating the fillable fields
     protected $table = 'personal_details';
     protected $primaryKey = 'id';
     protected $fillable = [
