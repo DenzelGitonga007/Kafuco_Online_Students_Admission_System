@@ -55,6 +55,6 @@ class EmergencyDetailController extends Controller
         $emerge_con_details->save();
 
         // Redirect
-        return redirect()->to('highschool_details')->with('success', "Your emergency contact details have been received successfully! Now fill in your highschool details below...");
+        return redirect()->to('high_school_details')->with('success', "Your emergency contact details have been received successfully! Now fill in your high school/secondary school details below...");
     }
 }

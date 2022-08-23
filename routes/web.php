@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\EmergencyDetailController;
+use App\Http\Controllers\HighSchoolDetailController;
 use Illuminate\Support\Facades\Route;
 // Call the controllers
 use App\Http\Controllers\UserController;
@@ -73,8 +74,14 @@ Route::post('student_upload_next_of_kin_details', [NextOfKinDetailController::cl
 // The emergency details form
 // Viewing the form
 Route::get('emergency_contact_details', [EmergencyDetailController::class, "viewEmergencyContactDetailsForm"]);
-// Uploading the next of kin details
+// Uploading the emergency contact details
 Route::post('student_upload_emergency_contact_details', [EmergencyDetailController::class, "uploadEmergencyContactDetails"]);
+
+// The highschool details
+// Viewing the form
+Route::get('high_school_details', [HighSchoolDetailController::class, "viewHighShoolDetailsForm"]);
+// Uploading the high school details
+Route::post('student_upload_high_school_details', [HighSchoolDetailController::class, "uploadHighSchoolDetails"]);
 
 
 //Spouse details form

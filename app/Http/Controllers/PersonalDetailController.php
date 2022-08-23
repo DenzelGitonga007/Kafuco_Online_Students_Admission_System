@@ -61,6 +61,7 @@ class PersonalDetailController extends Controller
 
         // Saving  into the database
         $personal_details = new PersonalDetail(); //Upload a new record through the model
+        
         $personal_details->surname = $surname;
         $personal_details->first_name = $first_name;
         $personal_details->last_name = $last_name;
