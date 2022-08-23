@@ -13,6 +13,7 @@ class ParentDetailController extends Controller
     public function viewParentDetailsForm() {
         return view('crud.student_crud.parent_details');
     }
+    // Uploading the parent details
     public function uploadParentDetails(Request $request) {
         //Validation
         $request->validate([
@@ -24,7 +25,7 @@ class ParentDetailController extends Controller
             // 'father_national_id'=> '',
             // 'father_occupation'=> '',
 
-            // // Mother
+            // Mother
             'mother'=> 'required',
             // 'mother_surname'=> '',
             // 'mother_first_name'=> '',
@@ -96,7 +97,7 @@ class ParentDetailController extends Controller
         $parent_details->guardian_pob = $guardian_pob;
         $parent_details->guardian_occupation = $guardian_occupation;
 
-
+        // Saving the data
         $parent_details->save();
 
         // After saving the data into the db, proceed to the spouse details page with the success message

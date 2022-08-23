@@ -125,7 +125,7 @@
                                                         </div>
 
                                                         <!-- Alternative Fill -->
-                                                        <div class="form-text">Type "7000000**" if not applicable</div>
+                                                        <div class="form-text">Type "700000000**" if not applicable</div>
                                                 
                                                     </div>
                                                 </div>

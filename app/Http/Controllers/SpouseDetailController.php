@@ -59,7 +59,7 @@ class SpouseDetailController extends Controller
         // Save
         $spouse_details->save();
 
-        return redirect()->back()->with('success', "Your spouse details have received successfully!");
+        return redirect()->to('next_of_kin_details')->with('success', "Your spouse details have been received successfully! Now fill out your next of kin details below...");
  
     }
 }

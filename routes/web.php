@@ -1,10 +1,12 @@
 <?php
 
+use App\Http\Controllers\EmergencyDetailController;
 use Illuminate\Support\Facades\Route;
 // Call the controllers
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PersonalDetailController;
 use App\Http\Controllers\IctCrudController;
+use App\Http\Controllers\NextOfKinDetailController;
 use App\Http\Controllers\ParentDetailController;
 use App\Http\Controllers\SpouseDetailController;
 
@@ -55,26 +57,44 @@ Route::middleware([
 // Uploading the personal details into the db
 Route::post('/student_upload_personal_details', [PersonalDetailController::class, "uploadPersonalDetails"]);
 
+// The parent details form
+// Viewing the form
+Route::get('parent_details', [ParentDetailController::class, "viewParentDetailsForm"]);
+// Uploading the parent details
+Route::post('student_upload_parent_details', [ParentDetailController::class, "uploadParentDetails"]);
+
+// The next of kin details form
+// Viewing the form
+Route::get('next_of_kin_details', [NextOfKinDetailController::class, "viewNextofKinDetailsForm"]);
+// Uploading the next of kin details
+Route::post('student_upload_next_of_kin_details', [NextOfKinDetailController::class, "uploadNextOfKinDetails"]);
+
+
+// The emergency details form
+// Viewing the form
+Route::get('emergency_contact_details', [EmergencyDetailController::class, "viewEmergencyContactDetailsForm"]);
+// Uploading the next of kin details
+Route::post('student_upload_emergency_contact_details', [EmergencyDetailController::class, "uploadEmergencyContactDetails"]);
+
 
 //Spouse details form
 // Viewing the form
 Route::get('spouse_details', [SpouseDetailController::class, "viewSpouseDetailsForm"]);
-
 // Uploading the spouse details
 Route::post('student_upload_spouse_details', [SpouseDetailController::class, "uploadSpouseDetails"]);
 
-// The parent details form
+// Next of kin details form
+Route::get('next_of_kin_details', [NextOfKinDetailController::class, "viewNextOfKinDetailsForm"]);
+// Uploading the next of kin details
+Route::post('student_upload_next_of_kin_details', [NextOfKinDetailController::class, "uploadNextOfKinDetails"]);
 
-// Viewing the form
-Route::get('parent_details', [ParentDetailController::class, "viewParentDetailsForm"]);
 
-// Uploading the parent details
-Route::post('student_upload_parent_details', [ParentDetailController::class, "uploadParentDetails"]);
+
+
 
 //Ict crud
 // Reading/viewing the personal details
 Route::get('/student_details', [IctCrudController::class, "index"]);
-
 // Reading/viewing each student individually
 Route::get('/view_student/{id}', [IctCrudController::class, "viewStudent"]);
 

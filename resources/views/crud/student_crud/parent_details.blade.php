@@ -84,7 +84,7 @@
                                         <div class="row">
                                             <div class="col">
                                                 <label for="father_national_id" class="form-label">National ID</label>
-                                                <input type="text" class="form-control" name="national_id" pattern="[0-9]{8}" placeholder="National ID Number" value="{{ old('father_national_id') }}">
+                                                <input type="text" class="form-control" name="father_national_id" pattern="[0-9]{8}" placeholder="National ID Number" value="{{ old('father_national_id') }}">
                                             </div>
                                         </div>
                                     </div> 
@@ -154,7 +154,7 @@
                                         <div class="row">
                                             <div class="col">
                                                 <label for="mother_national_id" class="form-label">National ID</label>
-                                                <input type="text" class="form-control" name="national_id" pattern="[0-9]{8}" placeholder="National ID Number" value="{{ old('mother_national_id') }}">
+                                                <input type="text" class="form-control" name="mother_national_id" pattern="[0-9]{8}" placeholder="National ID Number" value="{{ old('mother_national_id') }}">
                                             </div>
                                         </div>
                                     </div> 
@@ -179,7 +179,7 @@
                                             <!-- Surname -->
                                             <div class="col">
                                                 <label for="guardian_surname" class="form-label">Surname</label>
-                                                <input type="text" class="form-control" placeholder="guardian_surname" name="guardian_surname" value="{{ old('guardian_surname') }}">
+                                                <input type="text" class="form-control" placeholder="Guardian's Surname" name="guardian_surname" value="{{ old('guardian_surname') }}">
                                             </div>
                                             <!-- First_Name -->
                                             <div class="col">
