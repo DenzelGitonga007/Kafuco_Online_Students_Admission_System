@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\ClubAndSocietyController;
 use App\Http\Controllers\EmergencyDetailController;
+use App\Http\Controllers\GameAndSportDetailController;
 use App\Http\Controllers\HighSchoolDetailController;
 use Illuminate\Support\Facades\Route;
 // Call the controllers
@@ -8,6 +10,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\PersonalDetailController;
 use App\Http\Controllers\IctCrudController;
 use App\Http\Controllers\NextOfKinDetailController;
+use App\Http\Controllers\OtherDetailController;
+use App\Http\Controllers\OtherInstitutionDetailController;
 use App\Http\Controllers\ParentDetailController;
 use App\Http\Controllers\SpouseDetailController;
 
@@ -51,10 +55,6 @@ Route::middleware([
 // Student Crud
 
 // Personal Details
-
-// View the personal_details after posting
-// Route::get('student_view_personal_details', [PersonalDetailController::class, "viewPersonalDetails"]);
-
 // Uploading the personal details into the db
 Route::post('/student_upload_personal_details', [PersonalDetailController::class, "uploadPersonalDetails"]);
 
@@ -64,9 +64,16 @@ Route::get('parent_details', [ParentDetailController::class, "viewParentDetailsF
 // Uploading the parent details
 Route::post('student_upload_parent_details', [ParentDetailController::class, "uploadParentDetails"]);
 
-// The next of kin details form
+//Spouse details form
 // Viewing the form
-Route::get('next_of_kin_details', [NextOfKinDetailController::class, "viewNextofKinDetailsForm"]);
+Route::get('spouse_details', [SpouseDetailController::class, "viewSpouseDetailsForm"]);
+// Uploading the spouse details
+Route::post('student_upload_spouse_details', [SpouseDetailController::class, "uploadSpouseDetails"]);
+
+
+// Next of kin details form
+// Viewing the form
+Route::get('next_of_kin_details', [NextOfKinDetailController::class, "viewNextOfKinDetailsForm"]);
 // Uploading the next of kin details
 Route::post('student_upload_next_of_kin_details', [NextOfKinDetailController::class, "uploadNextOfKinDetails"]);
 
@@ -77,6 +84,7 @@ Route::get('emergency_contact_details', [EmergencyDetailController::class, "view
 // Uploading the emergency contact details
 Route::post('student_upload_emergency_contact_details', [EmergencyDetailController::class, "uploadEmergencyContactDetails"]);
 
+
 // The highschool details
 // Viewing the form
 Route::get('high_school_details', [HighSchoolDetailController::class, "viewHighShoolDetailsForm"]);
@@ -84,16 +92,30 @@ Route::get('high_school_details', [HighSchoolDetailController::class, "viewHighS
 Route::post('student_upload_high_school_details', [HighSchoolDetailController::class, "uploadHighSchoolDetails"]);
 
 
-//Spouse details form
+// The other institution details
 // Viewing the form
-Route::get('spouse_details', [SpouseDetailController::class, "viewSpouseDetailsForm"]);
-// Uploading the spouse details
-Route::post('student_upload_spouse_details', [SpouseDetailController::class, "uploadSpouseDetails"]);
+Route::get('other_institution_details', [OtherInstitutionDetailController::class, "viewOtherInstitutionDetailsForm"]);
+// Uploading the high school details
+Route::post('student_upload_other_institution_details', [OtherInstitutionDetailController::class, "uploadOtherInstitutionDetails"]);
 
-// Next of kin details form
-Route::get('next_of_kin_details', [NextOfKinDetailController::class, "viewNextOfKinDetailsForm"]);
-// Uploading the next of kin details
-Route::post('student_upload_next_of_kin_details', [NextOfKinDetailController::class, "uploadNextOfKinDetails"]);
+
+// The games and sport details
+// Viewing the form
+Route::get('games_and_sports_details', [GameAndSportDetailController::class, "viewGameAndSportDetailsForm"]);
+// Uploading the games and sports details
+Route::post('student_upload_other_institution_details', [GameAndSportDetailController::class, "uploadGameAndSportDetails"]);
+
+// The clubs and societies
+// Viewing the form
+Route::get('clubs_and_societies_details', [ClubAndSocietyController::class, "viewClubAndSocietyDetailsForm"]);
+// Uploading the games and sports details
+Route::post('student_upload_clubs_and_societies_details', [ClubAndSocietyController::class, "uploadClubAndSocietiesDetails"]);
+
+// The Other Details Form
+//Viewing the form
+Route::get('other_details', [OtherDetailController::class, "viewOtherDetailsForm"]);
+// Uploading the games and sports details
+Route::post('student_upload_other_details', [OtherDetailController::class, "uploadOtherDetails"]);
 
 
 

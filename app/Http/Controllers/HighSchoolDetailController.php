@@ -11,6 +11,7 @@ class HighSchoolDetailController extends Controller
     public function viewHighShoolDetailsForm() {
         return view('crud.student_crud.high_school_details');
     }
+    
     //Uploading the High School details
     public function uploadHighSchoolDetails(Request $request) {
         $request->validate([
@@ -73,6 +74,6 @@ class HighSchoolDetailController extends Controller
         $high_school_details->save();
 
         // Redirect
-        return redirect()->back()->with('success', "Your high school/secondary school details have been received successfully...");
+        return redirect()->to('other_institution_details')->with('success', "Your high school/secondary school details have been received successfully! Now fill the other institution and qualification form details below...");
     }
 }
