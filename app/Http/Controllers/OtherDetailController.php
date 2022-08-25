@@ -32,7 +32,7 @@ class OtherDetailController extends Controller
 
         // Save
         $other_details->save();
-        return redirect()->back()->with('success', "Your other information details have been received successfully!...");
+        return redirect()->to('files_details')->with('success', "Your other information details have been received successfully!Now upload your files in the form below...");
     }
 
 }

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ClubAndSocietyController;
 use App\Http\Controllers\EmergencyDetailController;
+use App\Http\Controllers\FileDetailController;
 use App\Http\Controllers\GameAndSportDetailController;
 use App\Http\Controllers\HighSchoolDetailController;
 use Illuminate\Support\Facades\Route;
@@ -116,6 +117,12 @@ Route::post('student_upload_clubs_and_societies_details', [ClubAndSocietyControl
 Route::get('other_details', [OtherDetailController::class, "viewOtherDetailsForm"]);
 // Uploading the games and sports details
 Route::post('student_upload_other_details', [OtherDetailController::class, "uploadOtherDetails"]);
+
+// The Files Details Form
+//Viewing the form
+Route::get('files_details', [FileDetailController::class, "viewFileDetailsForm"]);
+// Uploading the games and sports details
+Route::post('student_upload_files_details', [FileDetailController::class, "uploadFileDetails"]);
 
 
 
