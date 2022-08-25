@@ -103,7 +103,7 @@ Route::post('student_upload_other_institution_details', [OtherInstitutionDetailC
 // Viewing the form
 Route::get('games_and_sports_details', [GameAndSportDetailController::class, "viewGameAndSportDetailsForm"]);
 // Uploading the games and sports details
-Route::post('student_upload_other_institution_details', [GameAndSportDetailController::class, "uploadGameAndSportDetails"]);
+Route::post('student_upload_games_and_sports_details', [GameAndSportDetailController::class, "uploadGameAndSportDetails"]);
 
 // The clubs and societies
 // Viewing the form
